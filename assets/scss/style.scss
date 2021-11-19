@@ -11,97 +11,113 @@ html {
 }
 
 body {
+    height: 100vh;
+    background-image: url('../img/bg-img.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
-    background-image: url('./assets/img/thomas-griesbeck-BS-Uxe8wU5Y-unsplash.jpeg');
-    background-color: #333;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.6rem;
     color: #fff;
 
-    .top {
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-        h1 {
-            text-transform: uppercase;
-            text-align: center;
-            letter-spacing: .5rem;
-        }
-
-        .city-name--input {
-            position: absolute;
+    .wrapper {
+        .city-info {
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            left: 50%;
-            margin-left: 50%;
-            text-align: center;
-            font-size: 2rem;
-            padding: 5px 10px;
-            margin-top: 10px;
-            background: none;
-            border: none;
-            border-bottom: 2px solid #ddd;
+            flex-direction: column;
+
+            h1 {
+                position: absolute;
+                top: .5em;
+                text-transform: uppercase;
+                text-align: center;
+                letter-spacing: .5rem;
+            }
+
+            .city-name--input {
+                position: absolute;
+                top: 3em;
+                text-align: center;
+                font-size: 2rem;
+                padding: 5px 10px;
+                margin-top: 10px;
+                background: none;
+                border: none;
+                border-bottom: 2px solid #ddd;
+            }
+
+            .city-name--input:focus {
+                outline: none;
+            }
         }
 
-        .city-name--input:focus {
-            outline: none;
+
+        .weather-main {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .weather-icon {
+                position: absolute;
+                top: 10em;
+                width: 185px;
+            }
+
+            .weather-info {
+                position: absolute;
+                top: 14em;
+                font-size: 1.5em;
+
+                .weather {
+                    margin-left: 1em;
+                    color: rgba(255, 255, 255, 0.63);
+                }
+
+                .temperature {
+                    font-size: 2em;
+                }
+            }
         }
 
-        .quotes {
-            font-style: italic;
-            color: rgba(235, 235, 235, 0.664);
-            margin-top: 1em;
-            text-align: center;
-        }
-    }
-
-    .weather-main {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .weather-icon {
-            margin: 2em;
-            width: 180px;
-        }
-
-        .weather-info {
+        .details {
             position: absolute;
-            top: 45%;
-            left: 50%;
-            font-size: 1.5em;
+            top: 55vh;
+            width: 300px;
+            left: 5em;
 
-            .weather {
-                margin: .3em 0 1em 0;
+            .details-text {
+                text-transform: uppercase;
+                letter-spacing: .2em;
+                margin: 20px;
+                width: 50%;
+                text-align: center;
+                border: 10px solid white;
+                padding: 10px;
             }
 
-            .temperature {
-                font-size: 2em;
+            .details-info {
+                font-size: 2rem;
+                margin: 20px;
+
+                span {
+                    font-weight: 650;
+                }
             }
         }
     }
+}
 
-    .details {
-        position: absolute;
-        top: 50vh;
-        width: 20%;
+//MEDIA-QUERIES
 
-        .details-text {
-            text-transform: uppercase;
-            letter-spacing: .2em;
-            margin: 20px;
-            width: 50%;
-            text-align: center;
-            border: 10px solid white;
-            padding: 10px;
-        }
-
-        .details-info {
-            font-size: 2rem;
-            margin: 20px;
+@media(min-width: 768px) {
+    .wrapper {
+        .weather-icon {
+            width: 15px;
         }
     }
 }

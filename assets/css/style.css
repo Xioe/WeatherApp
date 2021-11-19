@@ -12,16 +12,19 @@ html {
 }
 
 body {
+  height: 100vh;
+  background-image: url("../img/bg-img.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
-  background-image: url("./assets/img/thomas-griesbeck-BS-Uxe8wU5Y-unsplash.jpeg");
-  background-color: #333;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.6rem;
   color: #fff;
 }
 
-body .top {
-  position: absolute;
+body .wrapper .city-info {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,27 +34,23 @@ body .top {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-body .top h1 {
+body .wrapper .city-info h1 {
+  position: absolute;
+  top: .5em;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: .5rem;
 }
 
-body .top .city-name--input {
+body .wrapper .city-info .city-name--input {
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  left: 50%;
-  margin-left: 50%;
+  top: 3em;
   text-align: center;
   font-size: 2rem;
   padding: 5px 10px;
@@ -61,18 +60,12 @@ body .top .city-name--input {
   border-bottom: 2px solid #ddd;
 }
 
-body .top .city-name--input:focus {
+body .wrapper .city-info .city-name--input:focus {
   outline: none;
 }
 
-body .top .quotes {
-  font-style: italic;
-  color: rgba(235, 235, 235, 0.664);
-  margin-top: 1em;
-  text-align: center;
-}
-
-body .weather-main {
+body .wrapper .weather-main {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -82,35 +75,41 @@ body .weather-main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-body .weather-main .weather-icon {
-  margin: 2em;
-  width: 180px;
-}
-
-body .weather-main .weather-info {
+body .wrapper .weather-main .weather-icon {
   position: absolute;
-  top: 45%;
-  left: 50%;
+  top: 10em;
+  width: 185px;
+}
+
+body .wrapper .weather-main .weather-info {
+  position: absolute;
+  top: 14em;
   font-size: 1.5em;
 }
 
-body .weather-main .weather-info .weather {
-  margin: .3em 0 1em 0;
+body .wrapper .weather-main .weather-info .weather {
+  margin-left: 1em;
+  color: rgba(255, 255, 255, 0.63);
 }
 
-body .weather-main .weather-info .temperature {
+body .wrapper .weather-main .weather-info .temperature {
   font-size: 2em;
 }
 
-body .details {
+body .wrapper .details {
   position: absolute;
-  top: 50vh;
-  width: 20%;
+  top: 55vh;
+  width: 300px;
+  left: 5em;
 }
 
-body .details .details-text {
+body .wrapper .details .details-text {
   text-transform: uppercase;
   letter-spacing: .2em;
   margin: 20px;
@@ -120,8 +119,18 @@ body .details .details-text {
   padding: 10px;
 }
 
-body .details .details-info {
+body .wrapper .details .details-info {
   font-size: 2rem;
   margin: 20px;
+}
+
+body .wrapper .details .details-info span {
+  font-weight: 650;
+}
+
+@media (min-width: 768px) {
+  .wrapper .weather-icon {
+    width: 15px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
