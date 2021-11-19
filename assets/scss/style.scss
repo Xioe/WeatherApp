@@ -1,0 +1,107 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    position: relative;
+    background-image: url('./assets/img/thomas-griesbeck-BS-Uxe8wU5Y-unsplash.jpeg');
+    background-color: #333;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    color: #fff;
+
+    .top {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        h1 {
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: .5rem;
+        }
+
+        .city-name--input {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: 50%;
+            margin-left: 50%;
+            text-align: center;
+            font-size: 2rem;
+            padding: 5px 10px;
+            margin-top: 10px;
+            background: none;
+            border: none;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .city-name--input:focus {
+            outline: none;
+        }
+
+        .quotes {
+            font-style: italic;
+            color: rgba(235, 235, 235, 0.664);
+            margin-top: 1em;
+            text-align: center;
+        }
+    }
+
+    .weather-main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .weather-icon {
+            margin: 2em;
+            width: 180px;
+        }
+
+        .weather-info {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            font-size: 1.5em;
+
+            .weather {
+                margin: .3em 0 1em 0;
+            }
+
+            .temperature {
+                font-size: 2em;
+            }
+        }
+    }
+
+    .details {
+        position: absolute;
+        top: 50vh;
+        width: 20%;
+
+        .details-text {
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            margin: 20px;
+            width: 50%;
+            text-align: center;
+            border: 10px solid white;
+            padding: 10px;
+        }
+
+        .details-info {
+            font-size: 2rem;
+            margin: 20px;
+        }
+    }
+}

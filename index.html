@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3710696c33.js" crossorigin="anonymous"></script>
+
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="top">
+            <h1 class="city-name"></h1>
+            <input class="city-name--input" type="text" placeholder="City name">
+            <p class="quotes">"Cos tu bedzie napisane..."</p>
+        </div>
+        <div class="weather-main">
+            <img src="./assets/img/cloudy.png" alt="Image representing the weather" class="weather-icon">
+            <div class="weather-info">
+                <p class="weather">Cloudy</p>
+                <p class="temperature">23℃</p>
+            </div>
+        </div>
+        <div class="few-days"></div>
+        <div class="details">
+            <h3 class="details-text">Details</h3>
+            <div class="details-info">
+                <p class="humidity">Humidity: </p>
+                <p class="visibility">Visibility: </p>
+                <p class="chance-of-rain">Chance of Rain: </p>
+                <p class="wind-speed">Wind speed: </p>
+                <p class="wind-direction">Wind direction: </p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
