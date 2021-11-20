@@ -6,11 +6,9 @@
     padding: 0;
 }
 
-html {
-    font-size: 62.5%;
-}
-
+html,
 body {
+    font-size: 62.5%;
     height: 100vh;
     background-image: url('../img/bg-img.jpeg');
     background-position: center;
@@ -18,106 +16,120 @@ body {
     background-repeat: no-repeat;
     position: relative;
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.6rem;
     color: #fff;
+}
 
-    .wrapper {
-        .city-info {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+.wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-size: 1.6rem;
 
-            h1 {
-                position: absolute;
-                top: .5em;
-                text-transform: uppercase;
-                text-align: center;
-                letter-spacing: .5rem;
-            }
-
-            .city-name--input {
-                position: absolute;
-                top: 3em;
-                text-align: center;
-                font-size: 2rem;
-                padding: 5px 10px;
-                margin-top: 10px;
-                background: none;
-                border: none;
-                border-bottom: 2px solid #ddd;
-            }
-
-            .city-name--input:focus {
-                outline: none;
-            }
+    .header {
+        &__city {left: 45%;
+            position: absolute;
+            top: .5em;
+            text-transform: uppercase;
+            letter-spacing: .5rem;
         }
 
+        &__city__input {left: 45%;
+            position: absolute;
+            top: 3em;
+            text-align: center;
+            font-size: 2rem;
+            padding-top: 10px;
+            margin-top: 10px;
+            background: none;
+            border: none;
+            border-bottom: 2px solid #ddd;
+        }
 
-        .weather-main {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+        &__city__input:focus {
+            outline: none;
+        }
 
-            .weather-icon {
+        .weather {
+            &__icon {left: 45%;
                 position: absolute;
-                top: 10em;
+                top: 7em;
                 width: 185px;
             }
 
-            .weather-info {
+            &__info {
+                left: 45%;
                 position: absolute;
-                top: 14em;
-                font-size: 1.5em;
+                width: 100px;
+                top: 8em;
 
-                .weather {
-                    margin-left: 1em;
+                &__conditions {
+                    font-size: 1.3em;
+                    text-align: center;
                     color: rgba(255, 255, 255, 0.63);
                 }
 
-                .temperature {
-                    font-size: 2em;
+                &__temperature {
+                    top: 5em;
+                    font-size: 2.6em;
                 }
             }
         }
 
-        .details {
-            position: absolute;
-            top: 55vh;
-            width: 300px;
-            left: 5em;
+    }
 
-            .details-text {
-                text-transform: uppercase;
-                letter-spacing: .2em;
-                margin: 20px;
-                width: 50%;
-                text-align: center;
-                border: 10px solid white;
-                padding: 10px;
+    .details {
+        position: absolute;
+        top: 55vh;
+        width: 300px;
+        left: 5em;
+
+        &__title {
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            margin: 20px;
+            width: 50%;
+            text-align: center;
+            border: 10px solid white;
+            padding: 10px;
+        }
+
+        .details__info {
+            font-size: 2rem;
+            margin: 20px;
+
+            span {
+                font-weight: 650;
             }
+        }
+    }
 
-            .details-info {
-                font-size: 2rem;
-                margin: 20px;
-
-                span {
-                    font-weight: 650;
-                }
-            }
+    .wind {
+        position: absolute;
+        top: 60vh;
+        left: 30%;
+        &__direction--circle {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            border: 4px solid white;
+        }
+        &__direction-detail{
+            left: 300px;
         }
     }
 }
 
 //MEDIA-QUERIES
 
-@media(min-width: 768px) {
-    .wrapper {
-        .weather-icon {
-            width: 15px;
+@media(min-width: 576px) {
+    .header {
+        &__city {
+            left: 30px;
         }
+    }
+
+    .details {
+        flex-direction: row;
+        justify-content: space-between;
     }
 }

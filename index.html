@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,28 +16,36 @@
 
 <body>
     <div class="wrapper">
-        <div class="city-info">
-            <h1 class="city-name"></h1>
-            <input class="city-name--input" type="text" placeholder="City name">
-        </div>
-        <div class="weather-main">
-            <img src="" alt="Image representing the weather" class="weather-icon">
-            <div class="weather-info">
-                <p class="weather"></p>
-                <p class="temperature"></p>
+        <header class="header">
+            <div class="header__city">
+                <h1 class="header__city city__title" ></h1>
+                <input class="header__city__input" type="text" placeholder="City name">
             </div>
-        </div>
+            <dsiv class="weather">
+                <img src="./assets/img/cloudy.png" alt="Image representing the weather" class="weather__icon">
+                <div class="weather__info">
+                    <p class="weather__info weather__info__conditions"></p>
+                    <p class="weather__info weather__info__temperature"></p>
+                </div>
+            </dsiv>
+        </header>
         <!--   <div class="few-days"></div> -->
-        <div class="details">
-            <h3 class="details-text">Details</h3>
-            <div class="details-info">
-                <p class="humidity">Humidity: <span class="humidity-data"></span> </p>
-                <p class="pressure">Pressure: <span class="pressure-data"></span> </p>
-                <!--       <p class="chance-of-rain">Chance of Rain: </p> -->
-                <p class="wind-speed">Wind speed: <span class="wind-speed-data"></span> </p>
-                <!--   <p class="wind-direction">Wind direction: </p> -->
+        <section class="details">
+            <h3 class="details__title">Details</h3>
+            <div class="details__info">
+                <p class="details__humidity">Humidity: <span class="details__humidity-data"></span> </p>
+                <p class="details__pressure">Pressure: <span class="details__pressure-data"></span> </p>
+                <!--       <p class="detail__chance-of-rain">Chance of Rain: </p> -->
+    
+                <!--   <p class="detail__wind-direction">Wind direction: </p> -->
             </div>
-        </div>
+        </section>
+
+        <section class="wind">
+            <div class="wind__direction--circle"></div>
+            <p class="wind__direction-detail">Wind direction: <span class="details__wind-direction-data"></span> </p>
+            <p class="wind__speed-detail">Wind speed: <span class="details__wind-speed-data"></span> </p>
+        </section>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./assets/js/main.js"></script>
