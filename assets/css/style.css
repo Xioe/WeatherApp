@@ -107,6 +107,22 @@ body {
   font-weight: 650;
 }
 
+.wrapper .sun {
+  position: relative;
+  font-size: 2rem;
+  top: 69vh;
+  width: 300px;
+  left: -8%;
+}
+
+.wrapper .sun__cykle {
+  width: 600px;
+  height: 300px;
+  position: absolute;
+  top: -5em;
+  left: 11em;
+}
+
 @media (min-width: 576px) {
   .header__city {
     left: 30px;

@@ -9,6 +9,8 @@ const pressure = document.querySelector('.details__pressure-data');
 const windSpeed = document.querySelector('.details__wind-speed-data');
 const windDirection = document.querySelector('.details__wind-speed-data');
 const arrow = document.querySelector('.fa-long-arrow-alt-up');
+const sunrise = document.querySelector('.sun__sunrise-data');
+const sunset = document.querySelector('.sun__sunset-data');
 
 const API_LINK = 'https://api.openweathermap.org/data/2.5/weather?q=';
 const API_LANG = '&lang=PL'
@@ -19,13 +21,28 @@ const getWeather = () => {
     const city = cityInput.value || 'Warszawa';
     const URL = API_LINK + city + API_LANG + API_KEY + API_UNITS_METRIC;
     axios.get(URL).then(res => {
-      //  console.log(res.data);
+        console.log(res.data);
 
         const temperatureData = res.data.main.temp;
         const humidityData = res.data.main.humidity;
         const pressureData = res.data.main.pressure;
         const windSpeedData = res.data.wind.speed;
         const windDirectionData = res.data.wind.deg;
+        const sunriseDataUnix = ((res.data.sys.sunrise) * 1000);
+        const sunsetDataUnix = ((res.data.sys.sunset) * 1000);
+
+        const sunriseTemp = new Date(sunriseDataUnix);
+
+        const sunriseData = ("0" + sunriseTemp.getHours() + ":0" +
+            sunriseTemp.getMinutes() + ":" +
+            sunriseTemp.getSeconds());
+
+
+        const sunsetTemp = new Date(sunsetDataUnix);
+
+        const sunsetData = (sunsetTemp.getHours() + ":" +
+            sunsetTemp.getMinutes() + ":" +
+            sunsetTemp.getSeconds());
 
         const status = Object.assign({}, ...res.data.weather);
 
@@ -53,19 +70,20 @@ const getWeather = () => {
         // console.log(windDirectionData);
 
         const degToCompass = () => {
-            const val = Math.floor((windDirectionData / 45 + 0.5) );
+            const val = Math.floor((windDirectionData / 45 + 0.5));
             const arr = ["↓", "↙", "←", "↖", "↑", "↗", "→", "↘"];
             return arr[(val % 8)];
 
             degToCompass();
-        }   
+        }
         cityName.textContent = res.data.name;
         weather.textContent = `// ${status.main}`;
         temperature.textContent = Number.parseFloat(temperatureData).toFixed(1) + "℃";
         humidity.textContent = `${humidityData}%`;
         pressure.textContent = `${pressureData}hPa`;
         windSpeed.textContent = `${Number.parseFloat(windSpeedData * 3.6).toFixed(0)} km/h ${degToCompass()}`;
-
+        sunrise.textContent = sunriseData;
+        sunset.textContent = sunsetData;
         // windDirection.textContent =`Wind direction: ${windDirectionData}%`;
 
     });

@@ -105,6 +105,22 @@ body {
             }
         }
     }
+
+    .sun {
+        position: relative;
+        font-size: 2rem;
+        top: 69vh;
+        width: 300px;
+        left: -8%;
+
+        &__cykle {
+            width: 600px;
+            height: 300px;
+            position: absolute;
+            top: -5em;
+            left: 11em;
+        }
+    }
 }
 
 //MEDIA-QUERIES
