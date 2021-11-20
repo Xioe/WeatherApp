@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head lang="pl">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -9,20 +9,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/3710696c33.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d63cfc9fc7.js" crossorigin="anonymous"></script>
 
     <title>Weather App</title>
+
+    <script src="https://kit.fontawesome.com/327a0d490c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="wrapper">
         <header class="header">
+            <div class="search">
+                <button class="fas fa-search-location"> </button>
+            </div>
             <div class="header__city">
-                <h1 class="header__city city__title" ></h1>
+                <h1 class="header__city city__title"></h1>
                 <input class="header__city__input" type="text" placeholder="City name">
             </div>
             <dsiv class="weather">
-                <img src="./assets/img/cloudy.png" alt="Image representing the weather" class="weather__icon">
+                <img src="./assets/img/cloudy.png" alt="Obraz przedstawiajacy pogode" class="weather__icon">
                 <div class="weather__info">
                     <p class="weather__info weather__info__conditions"></p>
                     <p class="weather__info weather__info__temperature"></p>
@@ -31,20 +36,18 @@
         </header>
         <!--   <div class="few-days"></div> -->
         <section class="details">
-            <h3 class="details__title">Details</h3>
+            <h3 class="details__title">Szczegóły</h3>
             <div class="details__info">
-                <p class="details__humidity">Humidity: <span class="details__humidity-data"></span> </p>
-                <p class="details__pressure">Pressure: <span class="details__pressure-data"></span> </p>
-                <!--       <p class="detail__chance-of-rain">Chance of Rain: </p> -->
-    
-                <!--   <p class="detail__wind-direction">Wind direction: </p> -->
+                <p class="details__humidity">Wilgotność: <span class="details__humidity-data"></span> </p>
+                <p class="details__pressure">Ciśnienie: <span class="details__pressure-data"></span> </p>
+                <p class="wind__speed-detail">Wiatr: <span class="details__wind-speed-data"></span> </p>
             </div>
         </section>
 
-        <section class="wind">
-            <div class="wind__direction--circle"></div>
-            <p class="wind__direction-detail">Wind direction: <span class="details__wind-direction-data"></span> </p>
-            <p class="wind__speed-detail">Wind speed: <span class="details__wind-speed-data"></span> </p>
+        <section class="sun">
+            <p class="sun__sunrise">Wchód słońca: <span class="sun__sunrise-data"></span> </p>
+            <p class="sun__sunset">Zachód słońca: <span class="sun__sunset-data"></span> </p>
+
         </section>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

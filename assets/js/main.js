@@ -7,7 +7,8 @@ const humidity = document.querySelector('.details__humidity-data');
 const pressure = document.querySelector('.details__pressure-data');
 //const rain = document.querySelector('.chance-of-rain');
 const windSpeed = document.querySelector('.details__wind-speed-data');
-//const windDirection = document.querySelector('.wind-direction');
+const windDirection = document.querySelector('.details__wind-speed-data');
+const arrow = document.querySelector('.fa-long-arrow-alt-up');
 
 const API_LINK = 'https://api.openweathermap.org/data/2.5/weather?q=';
 const API_LANG = '&lang=PL'
@@ -18,7 +19,7 @@ const getWeather = () => {
     const city = cityInput.value || 'Warszawa';
     const URL = API_LINK + city + API_LANG + API_KEY + API_UNITS_METRIC;
     axios.get(URL).then(res => {
-        //console.log(res.data);
+      //  console.log(res.data);
 
         const temperatureData = res.data.main.temp;
         const humidityData = res.data.main.humidity;
@@ -48,14 +49,31 @@ const getWeather = () => {
             icon.setAttribute('src', './assets/img/unknown.png')
         }
 
+        // wind direction
+        // console.log(windDirectionData);
+
+        const degToCompass = () => {
+            const val = Math.floor((windDirectionData / 45 + 0.5) );
+            const arr = ["↓", "↙", "←", "↖", "↑", "↗", "→", "↘"];
+            return arr[(val % 8)];
+
+            degToCompass();
+        }   
         cityName.textContent = res.data.name;
         weather.textContent = `// ${status.main}`;
         temperature.textContent = Number.parseFloat(temperatureData).toFixed(1) + "℃";
-        humidity.textContent =`${humidityData}%`;
-        pressure.textContent =`${pressureData}hPa`;
-        windSpeed.textContent =`${windSpeedData}m/s`;
-       // windDirection.textContent =`Wind direction: ${windDirectionData}%`;
+        humidity.textContent = `${humidityData}%`;
+        pressure.textContent = `${pressureData}hPa`;
+        windSpeed.textContent = `${Number.parseFloat(windSpeedData * 3.6).toFixed(0)} km/h ${degToCompass()}`;
+
+        // windDirection.textContent =`Wind direction: ${windDirectionData}%`;
+
     });
+}
+
+
+const search = () => {
+
 }
 
 const enterCheck = e => {
@@ -65,4 +83,5 @@ const enterCheck = e => {
 }
 
 
-cityInput.addEventListener('keyup', enterCheck)
+
+cityInput.addEventListener('keyup', enterCheck);

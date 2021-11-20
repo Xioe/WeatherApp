@@ -92,7 +92,7 @@ body {
   text-transform: uppercase;
   letter-spacing: .2em;
   margin: 20px;
-  width: 50%;
+  width: 60%;
   text-align: center;
   border: 10px solid white;
   padding: 10px;
@@ -105,23 +105,6 @@ body {
 
 .wrapper .details .details__info span {
   font-weight: 650;
-}
-
-.wrapper .wind {
-  position: absolute;
-  top: 60vh;
-  left: 30%;
-}
-
-.wrapper .wind__direction--circle {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  border: 4px solid white;
-}
-
-.wrapper .wind__direction-detail {
-  left: 300px;
 }
 
 @media (min-width: 576px) {
