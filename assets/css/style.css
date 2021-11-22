@@ -67,7 +67,7 @@ body {
   left: 45%;
   position: absolute;
   width: 100px;
-  top: 8em;
+  top: 8.3em;
 }
 
 .wrapper .header .weather__info__conditions {
@@ -113,6 +113,10 @@ body {
   top: 69vh;
   width: 300px;
   left: -8%;
+}
+
+.wrapper .sun span {
+  font-weight: 650;
 }
 
 .wrapper .sun__cykle {

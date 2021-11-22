@@ -63,7 +63,7 @@ body {
                 left: 45%;
                 position: absolute;
                 width: 100px;
-                top: 8em;
+                top: 8.3em;
 
                 &__conditions {
                     font-size: 1.3em;
@@ -112,6 +112,10 @@ body {
         top: 69vh;
         width: 300px;
         left: -8%;
+
+        span {
+            font-weight: 650;
+        }
 
         &__cykle {
             width: 600px;

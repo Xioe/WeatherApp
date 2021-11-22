@@ -31,18 +31,9 @@ const getWeather = () => {
         const sunriseDataUnix = ((res.data.sys.sunrise) * 1000);
         const sunsetDataUnix = ((res.data.sys.sunset) * 1000);
 
-        const sunriseTemp = new Date(sunriseDataUnix);
+        const sunriseData = moment(new Date(sunriseDataUnix)).format("HH:mm:ss");
+        const sunsetData = moment(new Date(sunsetDataUnix)).format("HH:mm:ss");
 
-        const sunriseData = ("0" + sunriseTemp.getHours() + ":0" +
-            sunriseTemp.getMinutes() + ":" +
-            sunriseTemp.getSeconds());
-
-
-        const sunsetTemp = new Date(sunsetDataUnix);
-
-        const sunsetData = (sunsetTemp.getHours() + ":" +
-            sunsetTemp.getMinutes() + ":" +
-            sunsetTemp.getSeconds());
 
         const status = Object.assign({}, ...res.data.weather);
 
